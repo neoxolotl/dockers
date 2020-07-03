@@ -1,0 +1,33 @@
+version: '2'
+services:
+  php7:
+    container_name: php7
+    image: php7
+    build: ./php
+    volumes:
+      - /home/administrator/nginxv2/config/php:/usr/local/etc/php
+      - /home/administrator/nginxv2/development/code/myapp:/var/www/html/myapp
+    depends_on:
+      - mysql
+
+  nginx:
+    container_name: nginx
+    image: nginx:1.10.1
+    ports:
+      - 8080:80
+    volumes:
+      - /home/administrator/nginxv2/development/config/nginx:/etc/nginx/conf.d
+      - /home/administrator/nginxv2/development/code/myapp:/var/www/html/myapp
+      - /home/administrator/nginxv2/development/logs:/var/log/nginx
+    depends_on:
+      - php7
+
+  mysql:
+    container_name: mysql
+    image: mysql:5.7.14
+    volumes:
+      - /home/administrator/nginxv2/development/mysql/data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=docker_sample
+

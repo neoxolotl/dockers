@@ -1,0 +1,88 @@
+#!/bin/bash -       
+#title           :menu_principal
+#description     :This script for list dockers and deploy dockers
+#author          :fsosa
+#date            :20190923
+#version         :0.2    
+#usage           :menu_principal
+#notes           :enlazado con otros scripts iniciar_docker, detener_docker
+#bash_version    :4.1.5(1)-release
+#==============================================================================
+
+clear
+echo -e "
+Select the operation 
+====================
+
+	1) Listar Dockers
+	2) Iniciar/Detener un Docker
+	4) Pods en Ejecución
+	5) Publicadores	
+
+	6) .." 
+
+read n
+case $n in
+  1) 	clear
+	echo -e "
+	Listado de Dockers
+	------------------
+
+	" 
+	ls ../
+	echo "--Press any key ----"
+	read a 
+	clear  
+	./menu		
+  ;;
+  2) clear
+	echo -e "
+	Iniciar y Detener un Docker
+	---------------------------
+
+Inicia o Detiene un pod de docker por lo tanto deberá poner el nombre conforme la Lista que se mostró anteriormente en el caso que no la haya visto se vuelve a transcribir a continuación:  
+
+	"
+	ls ../
+	echo "--Press any key ----"
+	read a
+	./iniciar_detener
+	./menu
+  ;;
+  3) echo -e "
+	Detener un Docker
+	-----------------
+
+Con esta opcion podrá detener un pod que se encuentre en ejecución 
+
+	"
+	echo "--Press any key ----"
+	read a
+	./detener_docker
+	./menu
+  ;;
+  4) echo -e "
+ 	Listado de Pods en Ejecucion
+	----------------------------
+
+	"
+	read a
+	docker ps 
+	read a
+	clear
+	./menu	
+  ;;
+
+  5) echo -e "
+	Publicadores 
+	------------
+
+	"
+        echo "--Press any key ----"
+        read a
+	./publicadores
+	
+  ;;
+  *) echo "invalid option";;
+esac
+

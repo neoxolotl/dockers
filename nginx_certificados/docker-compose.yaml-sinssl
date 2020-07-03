@@ -1,0 +1,35 @@
+nginx-proxy:
+  image: jwilder/nginx-proxy
+  restart: always
+  ports:
+    - "80:80"
+    - "443:443"
+  volumes:
+    - '/var/run/docker.sock:/tmp/docker.sock:ro'
+    - '/etc/nginx/vhost.d'
+    - '/usr/share/nginx/html'
+
+
+
+
+www:
+  image: nginx
+  restart: always
+  expose:
+    - "80"
+  volumes:
+    - './www:/usr/share/nginx/html:ro'
+  environment:
+    - VIRTUAL_HOST=dominio1.sosafernando.com
+
+
+www2:
+  image: nginx
+  restart: always
+  expose:
+    - "80"
+  volumes:
+    - './www2:/usr/share/nginx/html:ro'
+  environment:
+    - VIRTUAL_HOST=dominio2.sosafernando.com
+

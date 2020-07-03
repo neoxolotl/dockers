@@ -1,0 +1,68 @@
+#!/bin/bash
+
+echo -e "
+Que docker desea iniciar 
+------------------------
+	Ingrese el nombre del docker que desea iniciar
+
+1) Iniciar 
+2) Detener 
+
+"
+read n
+case $n in
+  1) clear
+	echo -e "
+	Iniciar Pod
+	-----------
+	"
+	read nombre_docker
+        clear
+        echo "... Iniciando ... el docker.. "$nombre_docker
+        
+        if [ "$nombre_docker" == "q" ]; then
+                echo "... Regresa al menu Principal !"
+                read a
+                ./menu
+        else
+                echo "....Será iniciado "$nombre_docker 
+
+        cd ..
+        cd $nombre_docker
+        docker-compose up -d
+        docker ps
+        cd app
+        ./menu
+        fi  
+  ;;
+
+  2) clear
+	echo -e "
+	Detener un pod
+	--------------
+	"
+        read nombre_docker
+        clear
+        echo "... Deteniendo ... el pod.. "$nombre_docker
+
+        if [ "$nombre_docker" == "q" ]; then
+                echo "... Regresa al menu Principal !"
+                read a
+                ./menu
+        else
+                echo "....Será detenido... "$nombre_docker 
+
+        cd ..
+        cd $nombre_docker
+        docker-compose down 
+        docker ps
+        cd app
+        ./menu
+        fi
+
+
+  ;;
+  *) echo "invalid option";;
+esac
+
+

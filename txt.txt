@@ -1,0 +1,11 @@
+
+
+
+estos es un origen 
+
+
+Origen
+/var/lib/docker/overlay2/da0fbc99c9e4f894c022c9c3e3eacafe9eee3217400d5991a863136405d43a81
+
+Destino 
+/var/lib/docker/overlay2/da0fbc99c9e4f894c022c9c3e3eacafe9eee3217400d5991a863136405d43a81

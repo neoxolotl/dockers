@@ -1,0 +1,22 @@
+ readme.md
+Start
+
+docker-compose up -d
+
+Query
+
+ docker exec openldap ldapsearch -x -H ldap://localhost -b dc=example,dc=org -D "cn=admin,dc=example,dc=org" -w admin
+
+
+
+
+
+
+
+the website works but I cannot log in the ldapadmin website.
+Using "example.com:8080" and
+Login:cn=admin,dc=example,dc=org
+
+Password:"admin"
+
+Any idea?

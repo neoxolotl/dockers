@@ -1,0 +1,24 @@
+Implementacion de Glovo Proveedores. 
+------------------------------------
+
+Consta de dos dockers uno dentro del root llamado nginx_certificados y otro dentro de administrator llamado nodejs
+
+1.- nginx_certificados (frontend)
+	
+
+	/repos/nginx_certificados
+
+	Se encarga de obtener los certificados ssl Let's Encrypt, guarda los datos dentro del directorio certs y tambien tiene un directorio llamado www
+
+	www 	-> contiene el Frontend 
+	certs	-> Contiene certificados Let's Encrypt. 
+
+	Tambien tiene un publicador dentro de la carpeta de root que se encarga de hacer las publicaciones. 
+
+
+
+2.- nodejs (backend)
+	
+	/root/administrator/nodejs/00-basic-express-generator
+
+	Gestiona el backend consta de los directorios 

@@ -1,0 +1,44 @@
+$ docker run \
+    --net=host \
+    -v /etc/localtime:/etc/localtime:ro \
+    -v /your-data-dir/data:/data \
+    --name "mailserver" \
+    -h "mail.example.com" \
+    -t analogic/poste.io
+i
+
+
+
+sql.data:
+    image: microsoft/mssql-server-linux:2017-latest
+    environment:
+      - SA_PASSWORD=Kdju03!2
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+    restart: always
+
+
+
+poste.io:
+    image: analogic/poste.io
+
+    restart: always
+
+    network_mode: "host"
+
+	ports:
+      	- "25:25"
+	- "80:80"
+	- "443:443"
+	- "110:110"
+	- "143:143"
+	- "465:465"
+	- "587:587"
+	- "993:993"
+	- "995:995"
+
+
+	environment: 
+		- HTTPS=ON
+

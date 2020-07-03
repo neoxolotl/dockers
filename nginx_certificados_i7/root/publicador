@@ -1,0 +1,5 @@
+cd /root/glovopublish/glovo-proveedores-publish/
+git pull
+cd /root/glovopublish/glovo-proveedores-publish/.git/hooks/
+./post-receive
+

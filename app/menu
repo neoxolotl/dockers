@@ -1,0 +1,13 @@
+#!/bin/bash -       
+#title           :menu
+#description     :This script call other menu_principal for list dockers and deploy dockers
+#author		 :fsosa
+#date            :20190923
+#version         :0.2    
+#usage		 :menu_principal
+#notes           :enlazado con otros scripts
+#bash_version    :4.1.5(1)-release
+#==============================================================================
+./menu_principal
+#./iniciar_docker
+#./detener_docker
