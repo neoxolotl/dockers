@@ -4,7 +4,7 @@ php-apache-certbot:
     - '80:80'
     - '443:443'
   environment:
-    DOMAINS: 'pymes.sosafernando.com'
+    DOMAINS: 'pym.sosafernando.com'
     EMAIL: 'admin@sosafernando.com'
     PAGESPEED: 'true'
     MODULES: 'cache,cache_disk,cache_socache'
