@@ -5,7 +5,9 @@ SqlServer   2017-latest
 Oracle Standard Edition 12c Release 2 on CentOS
 This **Dockerfile** is a [trusted build](https://registry.hub.docker.com/u/quay.io/maksymbilenko/oracle-12c/) of [Docker Registry](https://registry.hub.docker.com/).
 
-[![asciicast](https://asciinema.org/a/45878.png)](https://asciinema.org/a/45878)
+[![asciicast](https://asciinema.org/a/gXO4pacX3m85koCQIsiTFIFIn.svg)](https://asciinema.org/a/gXO4pacX3m85koCQIsiTFIFIn)
+
+
 
 ### Installation
 
